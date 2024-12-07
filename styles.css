@@ -1,0 +1,332 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    /* background-color: rgb(239, 235, 166); */
+    background-color: hsl(6, 78%, 57%);
+    font-family: "Roboto";
+    overflow: hidden;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* position: fixed; */
+  /* width: 100%; */
+  .library-title {
+    border: dotted 6px tan;
+    font-family: "League Script";
+    justify-content: center;
+    padding: 2% 5%;
+    margin: 5px;
+    border-radius: 15px;
+  }
+  #library-description {
+    padding: 2% 5%;
+    /* border: solid 2px black; */
+  }
+}
+
+.library {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.bookCard {
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  /* grid-template-rows: auto 25% auto; */
+  background-color: rgb(248, 154, 59);
+  border: dotted 4px rgb(65, 52, 242);
+  margin: 2%;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 60%;
+  /* position: relative; */
+}
+
+.formContainer {
+  width: 460px;
+  margin: 0 auto;
+}
+
+#fancy-inputs {
+  float: left;
+  width: 100%;
+  margin: 0 0 50px 0;
+  label.input {
+    float: left;
+    width: 460px;
+    height: 42px;
+    margin: 50px 0 0 0;
+    position: relative;
+    clear: both;
+    span {
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      position: absolute;
+      left: 0;
+      cursor: text;
+      span {
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        font-family: "Homemade Apple", cursive;
+        font-size: 18px;
+        font-weight: 550;
+        color: #fff;
+        text-indent: 10px;
+        transition: 0.3s;
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+      }
+      &:before {
+        content: "";
+        width: 0%;
+        height: 3px;
+        background-color: #1d2934;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 99;
+        transition: 0.3s;
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+      }
+      &:after {
+        content: "";
+        width: 0%;
+        height: 3px;
+        background-color: #2c3e50;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 99;
+        transition: 0.3s;
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+      }
+    }
+  }
+
+  input {
+    float: left;
+    width: 460px;
+    height: 40px;
+    padding: 0 10px;
+    border: 0;
+    border-bottom: 3px solid wheat;
+    background-color: transparent;
+    color: #000000;
+    font-family: "Roboto", cursive;
+    font-size: 22px;
+    position: relative;
+    z-index: 99;
+    &:focus {
+      outline: 0;
+    }
+    &.white {
+      background-color: hsl(6, 78%, 57%);
+    }
+  }
+
+  input:focus + span {
+    span {
+      cursor: initial;
+      position: absolute;
+      top: -35px;
+      color: wheat;
+    }
+    &:before {
+      width: 50%;
+    }
+    &:after {
+      width: 50%;
+    }
+  }
+
+  span.fixed {
+    span {
+      top: -35px;
+    }
+  }
+}
+
+#fancy-radio{
+  float: left;
+  width: 100%;
+  margin: 30px 0 30px 0;
+  label.radio{
+    float: left;
+    width: auto;
+    line-height: 30px;
+    margin: 0 0 10px 0;
+    color: #fff;
+    font-family: 'Indie Flower', cursive;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    clear: both;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    &:before{
+      content: '';
+      float: left;
+      width: 29px;
+      height: 29px;
+      margin: 0 5px 0 0;
+      background-color: #fff;
+      border-radius: 100%;
+      font-size: 16px;
+      text-indent: 40px;
+    }
+    &:after{
+      content: '';
+      width: 5px;
+      height: 5px;
+      background-color: #2C3E50;
+      border-radius: 100%;
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      opacity: 0;
+      transition: 0.2s;
+      -webkit-transition: 0.2s;
+      -moz-transition: 0.2s;
+    }
+    &.selected{
+      &:after{
+        width: 15.5px;
+        height: 15.5px;			
+        top: 7px;
+        left: 7px;
+        opacity: 1;
+      }
+    }
+    &:hover{
+      text-indent: 5px;
+    }
+  }
+}
+
+#newBookBtn {
+  width: 40%;
+  height: 50px;
+  line-height: 50px;
+  margin: 0 0 50px 0;
+  background-color: hsl(6, 60%, 47%);
+  color: #fff;
+  font-family: "Homemade Apple", cursive;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: 5px dashed tan;
+  box-shadow: 0 2px 4px rgba(209, 15, 15, 0.1);
+  text-decoration: none;
+  text-align: center;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  &:hover {
+    background-color: wheat;
+    color: black;
+    border: 3px dashed black;
+  }
+}
+
+#formAddNewBtn {
+  display: block;
+  width: 60%;
+  height: 50px;
+  margin: 0 0 50px 0;
+  background-color: tan;
+  color: #fff;
+  font-family: "Homemade Apple", cursive;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: 5px double hsl(6, 78%, 57%);
+  box-shadow: 0 2px 4px rgba(209, 15, 15, 0.1);
+  text-decoration: none;
+  text-align: center;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  &:hover {
+    background-color: #ebc973;
+    color: rgb(249, 231, 255);
+  }
+}
+
+#ifRead {
+  width: 40%;
+  background-color: maroon;
+  padding: 3% 0;
+  margin: 15% 0;
+  font-family: "Roboto", cursive;
+  font-size: 16px;
+  font-weight: 600;
+  border: 2px solid lightcoral;
+  border-radius: 10px;
+  color: white;
+}
+
+#dialog {
+  background-color: hsl(6, 60%, 47%);
+  border: dotted 5px tan;
+  position: relative;
+}
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0%);
+  transition:
+    display 0.7s allow-discrete,
+    overlay 0.7s allow-discrete,
+    background-color 0.7s;
+  /* Equivalent to
+  transition: all 0.7s allow-discrete; */
+}
+
+.removeBtn {
+  background-color: rgb(125, 12, 12);
+  color: wheat;
+  border: none;
+  padding: 5px 10px;
+  margin: 10px 0px 0px 0px;
+  cursor: pointer;
+  border-radius: 10px;
+  float:right;
+  font-family: Roboto;
+  font-weight: 400;
+}
+
+.closeBtn {
+  background-color: rgb(125, 12, 12);
+  color:wheat;
+  border: 3px solid tan;
+  padding: 10px 20px;
+  margin: 10px 0px 0px 0px;
+  cursor: pointer;
+  border-radius: 10px;
+  float:right;
+  font-family: Roboto;
+  font-weight: 600;
+  font-size: 16px;
+  &:hover {
+    background-color: wheat;
+    color: black;
+    border: 3px dashed black;
+  }
+}
+
+/* .remove-button:hover {
+  background-color: darkred;
+} */

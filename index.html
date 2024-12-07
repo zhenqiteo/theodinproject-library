@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIBRARY</title>
+    <link href="styles.css" rel="stylesheet" />
+    <link href="fontstyles.css" rel="stylesheet" />
+    <script defer src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=League+Script&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <h1 class="library-title">the library</h1>
+        <p id="library-description">functions: add and remove books from library!!</p>
+        <button class="show" id="newBookBtn">Add New Book</button>
+        <div class="library"></div>
+        <dialog class="formContainer" id="dialog" style="display: none;">
+            <form id="newBookForm">
+                <button class="closeBtn">Close</button>
+                <div id="fancy-inputs">
+                    <label class="input">
+                        <input type="text" id="title">
+                        <span><span>Book Title</span></span>
+                    </label>
+        
+                    <label class="input">
+                        <input type="text" id="author">
+                        <span><span>Book Author</span></span>
+                    </label>
+                    
+                    <label class="input" >
+                        <input type="number" id="pages">
+                        <span><span>Number of Pages</span></span>
+                    </label>
+                    <select id="ifRead">
+                        <option value="read">Read</option>
+                        <option value="not read yet">Not Read Yet</option>
+                    </select>
+                    <!-- <div id="fancy-radio">
+                        <input type="radio" name="group" id="questions" class="pull-left" style="display: none;">
+                        <label class="radio questions" for="questions">Read</label>
+                    
+                        <input type="radio" name="group" id="photo" class="pull-left" style="display: none;">
+                        <label class="radio photo" for="photo">Not Read Yet</label>
+                      </div> -->
+                      <button type="submit" id="formAddNewBtn">Add Book</button>
+                </div>
+            </form>
+        </dialog>
+    </div>
+</body>
+</html>
